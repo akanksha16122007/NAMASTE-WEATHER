@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WeatherLive</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link
       rel="icon"
       type="image"
@@ -19,38 +20,45 @@
             src="https://uxwing.com/wp-content/themes/uxwing/download/weather/weather-icon.png"
             width="50px"
             height="50px"
+            alt="WeatherLive logo"
           />
           <h2>WeatherLive</h2>
         </div>
-        <div class="search">
-          <input type="text" id="search" placeholder="Search City..." />
-          <button type="button" onclick="getWeather()">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ93wF2bcJ5CrxsgPlNsR2h6P_ETYwW2iHztw&s"
-            />
-          </button>
-        </div>
+        <nav class="nav-links">
+          <a href="#">Home</a>
+          <a href="About.html">About Us</a>
+          <a href="Contact.html">Contact Us</a>
+          <a href="FAQ.html">FAQ</a>
+        </nav>
       </div>
     </header>
     <main>
       <div class="main">
         <div class="content">
-          <div id="result"></div>
-          <div id="temp"></div>
-        </div>
-
-        <script src="script.js"></script>
-
-        <div class="side">
-          <h3><a href="#">Home</a></h3>
-          <h3><a href="About.html">About Us</a></h3>
-          <h3><a href="Contact.html">Contact Us</a></h3>
-          <h3><a href="FAQ.html">FAQ</a></h3>
+          <div class="weather-card">
+            <div class="hero">
+              <h1>WeatherLive</h1>
+              <p>Search any city to get live weather updates instantly.</p>
+            </div>
+            <div class="search-card">
+              <input type="text" id="search" placeholder="Search city, e.g. New York" />
+              <button type="button" id="searchButton" onclick="getWeather()">
+                <span class="button-icon">🔎</span>
+                <span class="button-text">Search</span>
+                <span class="loader" id="loader"></span>
+              </button>
+            </div>
+            <div id="result">
+              <h3 class="subtext">No city searched yet. Enter a city above to start.</h3>
+            </div>
+            <div id="temp"></div>
+          </div>
         </div>
       </div>
     </main>
     <footer>
       <p>©2026 WeatherLive. All rights reserved.</p>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
