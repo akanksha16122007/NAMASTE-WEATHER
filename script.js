@@ -21,11 +21,11 @@ async function getWeather() {
 
     startLoading();
     document.getElementById("result").innerHTML =
-      '<h3 class="subtext">Looking up weather for ' + city + '...</h3>';
+      '<h3 class="subtext">Looking up weather for ' + city + "...</h3>";
     document.getElementById("temp").innerHTML = "";
 
     const geoRes = await fetch(
-      `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(city)}`
+      `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(city)}`,
     );
 
     const geoData = await geoRes.json();
@@ -38,7 +38,7 @@ async function getWeather() {
     const longitude = geoData.results[0].longitude;
 
     const weatherRes = await fetch(
-      `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&hourly=precipitation_probability`
+      `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true&hourly=precipitation_probability`,
     );
     const data = await weatherRes.json();
     const temp = data.current_weather.temperature;
